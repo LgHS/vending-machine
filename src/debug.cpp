@@ -6,7 +6,7 @@
 void dbg_init()
 {
 #if DEBUG_SERIAL
-  SerialUSB.begin(115200);
+  Serial.begin(115200);
 #endif
 }
 
@@ -17,7 +17,7 @@ void dbg_println(const __FlashStringHelper *n)
   byte *payload;
 
 #if DEBUG_SERIAL
-    SerialUSB.println(n);
+    Serial.println(n);
 #endif
     
 #if DEBUG_NETWORK
@@ -45,7 +45,7 @@ void dbg_print(const char* str)
 {
 
 #if DEBUG_SERIAL
-  SerialUSB.println(str);
+  Serial.println(str);
 #endif
 
 #if DEBUG_NETWORK

@@ -59,9 +59,6 @@
 
 #define SESSION_TIMEOUT 45000 // 45secs.
 
-
-
-
 #include "Config.h"
 #include "net_transport.h"
 #include "net_messaging.h"

@@ -19,8 +19,8 @@ static Stream *serial;
 
 void serial_menu_init()
 {
-  SerialUSB.begin(9600);
-  serial = &SerialUSB;
+  Serial.begin(9600);
+  serial = &Serial;
 
   _serial_state = SS_MAIN_MENU;
 
