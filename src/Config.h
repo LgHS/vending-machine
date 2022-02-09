@@ -42,16 +42,16 @@ enum cState {NO_CARD, NET_WAIT, GOOD, IN_USE};
  ***************/
 
 // Network config defaults - can be overridden using serial menu
-uint8_t const _default_ip[4]        = {192,168,0,30};
-uint8_t const _default_server_ip[4] = {192,168,0,1};
-uint8_t const _default_mac[]        = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0x11 }; 
-#define       DEFAULT_NAME         "can_vend"
-#define       DEFAULT_BASE_TOPIC   "nh/"
+uint8_t const _default_ip[4]        = {172,16,42,220};
+uint8_t const _default_server_ip[4] = {172,16,42,1};
+uint8_t const _default_mac[]        = {0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x02}; 
+#define       DEFAULT_NAME         "vending_machine"
+#define       DEFAULT_BASE_TOPIC   "lghs/vending-machine"
 
 // MQTT stuff
 #define MQTT_PORT 1883
-#define S_STATUS "nh/status/req"
-#define P_STATUS "nh/status/res"
+#define S_STATUS "lghs/vending-machine/status/req"
+#define P_STATUS "lghs/vending-machine/status/res"
 #define STATUS_STRING "STATUS"
 
 // Maximum time between received network messages before resetting
