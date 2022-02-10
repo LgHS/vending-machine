@@ -115,7 +115,7 @@ struct MDB_Byte sendData[40];
 byte sendLength;
 int rst;
 byte ret_button;
-uint8_t _debug_level = 0;
+uint8_t _debug_level = 1;
 
 byte rf_count;
 LiquidCrystal_I2C lcd(LCD_I2C_ADDRESS, LCD_WIDTH, 2);
@@ -202,6 +202,9 @@ void MDB_Write(int data)
 
 void setup()
 {
+    dbg_println("Hello World");
+    lcd.print(F("Init..."));
+
     //  wdt_reset ();
     dbg_init();
     delay(4000);
@@ -211,9 +214,6 @@ void setup()
 
     lcd.init();
     lcd.backlight();
-    lcd.print(F("Initialising..."));
-
-    // Clear tx/rx buffers
     memset(recvData, 0, sizeof(recvData));
     memset(sendData, 0, sizeof(sendData));
 
@@ -743,7 +743,7 @@ void loop()
     {
         serial_menu();
         net_transport_loop();
-
+        
         if (!net_transport_connected())
         {
             if (connected)
@@ -842,7 +842,7 @@ void loop()
                     memset(rfid_serial, 0, sizeof(rfid_serial));
                     flush_buffer = false;
                     time_card_read = 0;
-                }
+                }https://wiki.nottinghack.org.uk/wiki/Vending_Machine/Cashless_Device_Implementation
 
                 // we can now check for a card
                 if (rfid_poll(rfid_serial))

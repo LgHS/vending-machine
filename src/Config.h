@@ -42,11 +42,11 @@ enum cState {NO_CARD, NET_WAIT, GOOD, IN_USE};
  ***************/
 
 // Network config defaults - can be overridden using serial menu
-uint8_t const _default_ip[4]        = {172,16,42,220};
-uint8_t const _default_server_ip[4] = {172,16,42,1};
+uint8_t const _default_ip[4]        = {172,16,42,126};
+uint8_t const _default_server_ip[4] = {172,16,42,220};
 uint8_t const _default_mac[]        = {0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x02}; 
-#define       DEFAULT_NAME         "vending_machine"
-#define       DEFAULT_BASE_TOPIC   "lghs/vending-machine"
+#define       DEFAULT_NAME         "vending-machine"
+#define       DEFAULT_BASE_TOPIC   "lghs/"
 
 // MQTT stuff
 #define MQTT_PORT 1883
@@ -81,7 +81,7 @@ uint8_t const _default_mac[]        = {0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x02};
 /***************
  ***  LCD    ***
  ***************/
-#define LCD_I2C_ADDRESS 0x27
+#define LCD_I2C_ADDRESS 0x20
 #define LCD_WIDTH 16
 
 

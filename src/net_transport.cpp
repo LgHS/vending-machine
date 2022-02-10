@@ -39,10 +39,12 @@ static void checkMQTT(bool always_attempt_connection)
 
         if (_client->connect(_dev_name))
         {
-            if (_debug_level)
+            if (_debug_level) {
                 dbg_println(F("Connected to MQTT"));
+            }
 
             sprintf(_mqttPayload, "Restart: %s", _dev_name);
+            
             _client->publish(P_STATUS, _mqttPayload);
             _client->subscribe(S_STATUS);
 
